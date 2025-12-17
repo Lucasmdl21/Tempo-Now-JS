@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ESTILOS/estilo.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italiana&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tempo Now</title>
+</head>
+
+<body>
+    <!-- Container Bloco de pesquisa -->
+    <div class="container">
+        <!-- Pesquisar sua cidade -->
+        <div class="form">
+            <h3>Veja o tempo em sua cidade:</h3>
+            <div class="form-input-container">
+                <input type="text" id="city-input" placeholder="Digite o nome da sua cidade">
+                <button id="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dados do tempo -->
+        <div id="weather-data" class="hide">
+            <h2>
+                <i class="fa-solid fa-location-dot"></i>
+                <span id="city"></span>
+                <!-- bandeira do País -->
+                <img src="" alt="Bandeira" id="country">
+            </h2>
+
+            <!--Tempo temperatura -->
+            <p id="temperature"><span></span>&deg;C</p>
+            <div id="description-container">
+                <p id="description"></p>
+
+                <img src="" alt="Tempo" id="weather-icon">
+            </div>
+
+            <!-- tempo umidade -->
+            <div id="details-container">
+                <p id="umidity">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span>45%</span>
+                </p>
+                <!-- Tempo velocidade do vento -->
+                <p id="wind">
+                    <i class="fa-solid fa-wind"></i>
+                    <span>4Km/h</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="CODIGOS/codigo.js"></script>
+
+</html>
