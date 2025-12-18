@@ -1,101 +1,159 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
-    background: linear-gradient(180deg, #5252ff, #4ec4ff);
+body {
+    /* Fundo em um cinza azulado muito profundo e discreto */
+    background-color: #1e2124;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
-.hide{
-    display: none;
-}
-.container{
-    background: #ffffff26;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px 0 #1f26875e;
-    backdrop-filter: blur(8.5px);
-    -webkit-backdrop-filter: blur(8.5px);
-    color: #090909;
-    border: 1px solid #ffffff2e;
-    padding: 2rem;
-    width: 350px;
+    padding: 20px;
 }
 
-.form h3{
-    text-align: center;
-    font-size: 1.5rem;
+.hide {
+    display: none !important;
+}
+
+/* Container com visual de "papel" escuro e bordas suaves */
+.container {
+    background: #2f3136;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+}
+
+/* Formulário de Pesquisa */
+.form h3 {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #b9bbbe;
     margin-bottom: 1rem;
 }
 
-.form-input-container{
+.form-input-container {
     display: flex;
+    gap: 0; /* Unindo input e botão */
 }
-.form input{
-    padding: .8rem;
-    border: none;
+
+.form input {
+    background: #202225;
+    border: 1px solid #202225;
+    padding: 0.7rem 1rem;
+    color: #fff;
+    border-radius: 6px 0 0 6px;
+    outline: none;
     flex: 1;
-    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: border 0.3s;
 }
 
-.form button{
-    padding: .8rem 1rem;
+.form input:focus {
+    border-color: #5865f2; /* Apenas um detalhe de cor ao focar */
+}
+
+.form button {
+    background: #40444b;
     border: none;
-    background: #aaf6ff;
-    color: #000000;
-    font-weight: 600;
-    margin-left: .5rem;
-    border-radius: 5px;
+    color: #fff;
+    padding: 0 1.2rem;
+    border-radius: 0 6px 6px 0;
     cursor: pointer;
-
+    transition: background 0.2s;
 }
-/* Clima */
-#weather-data{
-    border-top: 1px solid #ffffff;
+
+.form button:hover {
+    background: #4f545c;
+}
+
+/* Seção de Dados do Tempo */
+#weather-data {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
+    border-top: 1px solid #40444b;
     text-align: center;
 }
 
-#weather-data h2{
+#weather-data h2 {
+    font-size: 1.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0.6rem;
+    gap: 8px;
+    font-weight: 600;
 }
 
-#weather-data h2 i{
+#country {
+    height: 14px;
+    opacity: 0.8;
+}
+
+#temperature {
+    font-size: 3.5rem;
+    font-weight: 300; /* Fonte mais fina para parecer menos agressivo */
+    margin: 0.5rem 0;
+}
+
+#description-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #b9bbbe;
+    font-size: 0.9rem;
+}
+
+#weather-icon {
+    width: 40px;
+    filter: grayscale(0.2); /* Suaviza as cores do ícone da API */
+}
+
+/* Detalhes de Rodapé */
+#details-container {
+    display: flex;
+    margin-top: 1.5rem;
+    background: #36393f;
+    border-radius: 8px;
+    padding: 0.8rem;
+}
+
+#details-container p {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #b9bbbe;
+}
+
+#umidity {
+    border-right: 1px solid #40444b;
+}
+
+#details-container i {
     font-size: 1rem;
-}
-#weather-data span{
-    margin: 0.6rem;
-}
-#country{
-    height: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 #00000040;
-}
-#description-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.5rem 0;
+    margin-bottom: 5px;
+    color: #72767d;
 }
 
-#details-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
+#details-container span {
+    color: #fff;
+    font-weight: 600;
+    margin-top: 2px;
 }
 
-#details-container #umidity{
-    border-right: 1px solid #ffffff;
-    margin: 0.6rem;
-    padding: 0.6rem;
+/* Responsividade */
+@media (max-width: 380px) {
+    .container {
+        padding: 1.5rem;
+        max-width: 95%;
+    }
 }

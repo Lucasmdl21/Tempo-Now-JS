@@ -1,4 +1,4 @@
-// 4664e9360bf8755c62b214a979e413e4
+
 // variaveis globais
 const apiKey = "4664e9360bf8755c62b214a979e413e4";
 const apiCountryURL = "https://flagcdn.com/w40/";
