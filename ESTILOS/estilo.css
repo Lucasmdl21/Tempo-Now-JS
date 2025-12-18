@@ -6,31 +6,30 @@
 }
 
 body {
-    /* Fundo em um cinza azulado muito profundo e discreto */
     background-color: #1e2124;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 15px;
 }
 
 .hide {
     display: none !important;
 }
 
-/* Container com visual de "papel" escuro e bordas suaves */
 .container {
     background: #2f3136;
     border-radius: 12px;
     padding: 2rem;
+
     width: 100%;
-    max-width: 360px;
+    max-width: 400px; 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     color: #ffffff;
+    overflow: hidden;
 }
 
-/* Formulário de Pesquisa */
 .form h3 {
     text-align: left;
     font-size: 1rem;
@@ -41,23 +40,24 @@ body {
 
 .form-input-container {
     display: flex;
-    gap: 0; /* Unindo input e botão */
+    width: 100%;
 }
 
 .form input {
     background: #202225;
     border: 1px solid #202225;
-    padding: 0.7rem 1rem;
+    padding: 0.8rem 1rem;
     color: #fff;
     border-radius: 6px 0 0 6px;
     outline: none;
     flex: 1;
-    font-size: 0.9rem;
+    min-width: 0; 
+    font-size: 1rem; 
     transition: border 0.3s;
 }
 
 .form input:focus {
-    border-color: #5865f2; /* Apenas um detalhe de cor ao focar */
+    border-color: #5865f2;
 }
 
 .form button {
@@ -68,13 +68,15 @@ body {
     border-radius: 0 6px 6px 0;
     cursor: pointer;
     transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .form button:hover {
     background: #4f545c;
 }
 
-/* Seção de Dados do Tempo */
 #weather-data {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
@@ -83,22 +85,23 @@ body {
 }
 
 #weather-data h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
     font-weight: 600;
 }
 
 #country {
-    height: 14px;
+    height: 18px;
     opacity: 0.8;
 }
 
 #temperature {
-    font-size: 3.5rem;
-    font-weight: 300; /* Fonte mais fina para parecer menos agressivo */
+    font-size: clamp(2.5rem, 15vw, 4rem);
+    font-weight: 300;
     margin: 0.5rem 0;
 }
 
@@ -108,21 +111,23 @@ body {
     align-items: center;
     gap: 5px;
     color: #b9bbbe;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    text-transform: capitalize;
 }
 
 #weather-icon {
-    width: 40px;
-    filter: grayscale(0.2); /* Suaviza as cores do ícone da API */
+    width: 50px;
+    filter: grayscale(0.2);
 }
 
-/* Detalhes de Rodapé */
+
 #details-container {
     display: flex;
+    justify-content: space-around;
     margin-top: 1.5rem;
     background: #36393f;
     border-radius: 8px;
-    padding: 0.8rem;
+    padding: 1rem 0.5rem;
 }
 
 #details-container p {
@@ -130,8 +135,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #b9bbbe;
+    text-align: center;
 }
 
 #umidity {
@@ -139,21 +145,42 @@ body {
 }
 
 #details-container i {
-    font-size: 1rem;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
     color: #72767d;
 }
 
 #details-container span {
     color: #fff;
     font-weight: 600;
-    margin-top: 2px;
+    margin-top: 4px;
 }
 
-/* Responsividade */
-@media (max-width: 380px) {
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE TOTAL --- */
+@media (max-width: 320px) {
     .container {
-        padding: 1.5rem;
-        max-width: 95%;
+        padding: 1rem;
+    }
+    
+    #temperature {
+        font-size: 2.5rem;
+    }
+
+    #details-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #umidity {
+        border-right: none;
+        border-bottom: 1px solid #40444b;
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-height: 500px) {
+    body {
+        align-items: flex-start;
+        padding-top: 20px;
     }
 }
